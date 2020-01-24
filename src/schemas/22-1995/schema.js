@@ -26,10 +26,10 @@ let schema = {
   ]),
   anyOf: [
     {
-      "required" : ["vaFileNumber"]
+      required: ['vaFileNumber']
     },
     {
-      "required" : ["veteranSocialSecurityNumber"]
+      required: ['veteranSocialSecurityNumber']
     }
   ],
   properties: {
@@ -57,7 +57,13 @@ let schema = {
     },
     benefit: {
       type: 'string',
-      enum: ['chapter33', 'chapter30', 'chapter1606', 'transferOfEntitlement', 'chapter32', 'chapter1607']
+      enum: [
+        'chapter33',
+        'chapter30',
+        'chapter1606',
+        'transferOfEntitlement',
+        'chapter32'
+      ]
     },
     educationType: {
       $ref: '#/definitions/educationType'
@@ -113,25 +119,22 @@ let schema = {
       $ref: '#/definitions/privacyAgreementAccepted'
     },
     isEdithNourseRogersScholarship: {
-        type: 'boolean'
+      type: 'boolean'
     },
     isEnrolledStem: {
-        type: 'boolean'
+      type: 'boolean'
     },
     isPursuingTeachingCert: {
-        type: 'boolean'
+      type: 'boolean'
     },
     isActiveDuty: {
-        type: 'boolean'
+      type: 'boolean'
     }
   },
   required: ['privacyAgreementAccepted', 'veteranFullName']
 };
 
-[
-  ['vaFileNumber'],
-  ['bankAccountChange']
-].forEach((args) => {
+[['vaFileNumber'], ['bankAccountChange']].forEach(args => {
   schemaHelpers.addDefinitionToSchema(schema, ...args);
 });
 
