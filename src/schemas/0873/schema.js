@@ -42,8 +42,8 @@ const schema = {
     preferredContactMethod: {
       default: 'email',
       type: 'string',
-      enum: ['email', 'mail', 'phone'],
-      enumNames: ['Email', 'US Mail', 'Phone'],
+      enum: ['email', 'phone', 'mail'],
+      enumNames: ['Email (Recommended)', 'Phone', 'US Mail'],
     },
     topic: {
       type: 'string',
